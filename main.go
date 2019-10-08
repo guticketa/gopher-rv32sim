@@ -9,6 +9,8 @@ import (
 	// "reflect"
 )
 
+var _ = fmt.Println
+
 var verbose = flag.Bool("v", false, "")
 
 func main() {
@@ -26,7 +28,7 @@ func main() {
 		inst := sim.Fetch()
 		ops := sim.Decode(inst)
 		if *verbose {
-			fmt.Printf("0x%08x:  %08x  %s\n", sim.PC, inst, ops.Name)
+			disasm(sim.PC, inst, &ops)
 		}
 		sim.Execute(&ops)
 	}

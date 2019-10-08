@@ -1,4 +1,4 @@
-SRC := main.go cpu.go mem.go bus.go
+SRC := main.go cpu.go mem.go bus.go disasm.go
 
 all: build
 
