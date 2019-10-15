@@ -28,6 +28,10 @@ const (
 )
 
 const (
+	resetVec = 0x80000000
+)
+
+const (
 	EI_CLASS  = 4
 	EI_DATA   = 5
 	EI_NIDENT = 16
@@ -148,6 +152,10 @@ func (p *CPU) LoadElf(filename string) {
 		}
 	}
 	p.PC = uint32(fileHdr.Entry)
+}
+
+func (p *CPU) Reset() {
+	p.PC = resetVec
 }
 
 var instructions = map[string]func(cpu *CPU, ops *Ops){

@@ -20,8 +20,8 @@ func main() {
 	
 	filename := flag.Args()[0]
 	sim := NewCPU()
+	sim.Reset()
 	sim.LoadElf(filename)
-
 	for i := 0; i < 5000; i++ {
 		inst := sim.Fetch()
 		ops := sim.Decode(inst)
