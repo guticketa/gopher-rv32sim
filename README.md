@@ -9,14 +9,14 @@ gopher-rv32sim is a RV32 simulator, written in Go.
 
 * go 1.12.8
 
-## Build
+## Installation
 
 ```
-$ make build
+$ go get github.com/guticketa/gopher-rv32sim
 ```
 
 ## Usage
 
 ```
-$ ./gopher-rv32sim -v sample.elf
+$ /path/to/gopher-rv32sim -v sample.elf
 ```
